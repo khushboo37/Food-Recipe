@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add a New Recipe</h1>
+        <form method="POST">
+            <label for="name">Recipe Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="ingredients">Ingredients:</label>
+            <textarea id="ingredients" name="ingredients" required></textarea>
+            
+            <label for="instructions">Instructions:</label>
+            <textarea id="instructions" name="instructions" required></textarea>
+            
+            <input type="submit" value="Add Recipe">
+        </form>
+        <a href="/">Back to Recipe List</a>
+    </div>
+</body>
+</html>
+

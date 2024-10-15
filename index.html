@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Inline CSS for testing -->
+    <style>
+        body {
+            background-color: #e0f7fa;  /* This should change the background color */
+        }
+    </style>
+    <title>Recipe List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Food Recipes</h1>
+        <a href="/add_recipe">Add New Recipe</a>
+        <ul>
+            {% for recipe in recipes %}
+            <li>
+                <h2>{{ recipe['name'] }}</h2>
+                <p><strong>Ingredients:</strong> {{ recipe['ingredients'] }}</p>
+                <p><strong>Instructions:</strong> {{ recipe['instructions'] }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+
